@@ -1,0 +1,30 @@
+[versions]
+anroidx-ktx = "1.9.0"
+agp = "7.4.2"
+kotlin = "1.7.21"
+appcompat = "1.6.1"
+material = "1.8.0"
+constraintlayout = "2.1.4"
+junit = "4.13.2"
+androidx-junit = "1.1.5"
+androidx-espresso-core = "3.5.1"
+dagger = "2.45"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+
+[libraries]
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "anroidx-ktx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
+androidx-espresso= { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
+dagger = { group = "com.google.dagger", name="dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name="dagger-compiler", version.ref = "dagger" }
+
+
