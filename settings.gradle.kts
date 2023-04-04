@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Todo"
 include(":app")
+include(":data:db")
+include(":data:room_db")

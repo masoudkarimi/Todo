@@ -9,12 +9,16 @@ junit = "4.13.2"
 androidx-junit = "1.1.5"
 androidx-espresso-core = "3.5.1"
 dagger = "2.45"
+room = "2.5.0"
+coroutine-core = "1.6.1"
+coroutine-android = "1.5.2"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "anroidx-ktx" }
@@ -26,5 +30,11 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "a
 androidx-espresso= { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
 dagger = { group = "com.google.dagger", name="dagger", version.ref = "dagger" }
 dagger-compiler = { group = "com.google.dagger", name="dagger-compiler", version.ref = "dagger" }
+room-ktx = { group = "androidx.room", name="room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name="room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name="room-compiler", version.ref = "room" }
+room-common = { group = "androidx.room", name="room-common", version.ref = "room" }
+coroutine-core = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-core", version.ref = "coroutine-core" }
+coroutine-android = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-android", version.ref = "coroutine-android" }
 
 
