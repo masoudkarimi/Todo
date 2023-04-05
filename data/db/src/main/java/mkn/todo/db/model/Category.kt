@@ -13,6 +13,4 @@ data class Category(
     val id: Int,
     @ColumnInfo(name = "name")
     val name: String,
-    @ColumnInfo(name = "color")
-    val color: String
 )
