@@ -18,7 +18,8 @@ import javax.inject.Singleton
 @Singleton
 interface RoomDatabaseComponent {
 
-    fun provideTodoDatabase(): TodoDatabase
+    fun provideTaskDao(): TaskDao
+    fun provideCategoryDao(): CategoryDao
 
     @Component.Factory
     interface Factory {
