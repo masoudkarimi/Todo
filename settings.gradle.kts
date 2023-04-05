@@ -16,3 +16,4 @@ rootProject.name = "Todo"
 include(":app")
 include(":data:db")
 include(":data:room_db")
+include(":feature:tasks:domain")

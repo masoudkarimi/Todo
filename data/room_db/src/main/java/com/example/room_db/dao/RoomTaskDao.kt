@@ -8,7 +8,10 @@ import mkn.todo.db.model.Task
 @Dao
 abstract class RoomTaskDao: TaskDao {
     @Query("SELECT * from tasks")
-    abstract override fun getAllCategories(): Flow<List<Task>>
+    abstract override fun getAllTasks(): Flow<List<Task>>
+
+    @Query("SELECT * FROM tasks WHERE id = :id")
+    abstract override fun findTaskById(id: Long): Task?
 
     @Insert
     abstract override suspend fun addNewTask(task: Task): Long
