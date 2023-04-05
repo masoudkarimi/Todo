@@ -42,6 +42,7 @@ dependencies {
     implementation(project(":feature:tasks:domain"))
     implementation(project(":feature:tasks:ui"))
 
+    implementation(libs.dagger)
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -50,4 +51,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
+
+    kapt(libs.dagger.compiler)
 }
