@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":feature:tasks:ui"))
 
     implementation(libs.dagger)
+    implementation(libs.room.runtime)
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
