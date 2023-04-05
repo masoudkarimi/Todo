@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/data/room_db" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/tasks" />
+            <option value="$PROJECT_DIR$/feature/tasks/data" />
             <option value="$PROJECT_DIR$/feature/tasks/domain" />
           </set>
         </option>
