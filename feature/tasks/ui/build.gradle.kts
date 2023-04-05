@@ -37,6 +37,7 @@ android {
 dependencies {
     implementation(project(":feature:tasks:data"))
     implementation(project(":feature:tasks:domain"))
+    implementation(libs.navigation.uiktx)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.dagger)

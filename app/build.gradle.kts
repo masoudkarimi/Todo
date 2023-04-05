@@ -1,8 +1,8 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
-
 }
 
 android {
@@ -36,11 +36,17 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:db"))
+    implementation(project(":data:room_db"))
+    implementation(project(":feature:tasks:data"))
+    implementation(project(":feature:tasks:domain"))
+    implementation(project(":feature:tasks:ui"))
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.navigation.uiktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)

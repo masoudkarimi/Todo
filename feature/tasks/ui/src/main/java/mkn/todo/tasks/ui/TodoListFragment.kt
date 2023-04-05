@@ -10,6 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import mkn.todo.tasks.data.di.DaggerTasksDataComponent
+import mkn.todo.tasks.ui.di.DaggerTasksUiComponent
 import mkn.todo.tasks.ui.di.ViewModelFactory
 import javax.inject.Inject
 
@@ -22,7 +24,6 @@ class TodoListFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
     }
 

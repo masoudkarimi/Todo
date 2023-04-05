@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/todoListFragment"
+    android:id="@+id/todos_list_graph">
+
+    <deepLink app:uri="todo://list" />
+
+    <fragment android:id="@+id/todoListFragment"
+        android:name="mkn.todo.tasks.ui.TodoListFragment"
+        android:label="Nothing"
+        />
+</navigation>

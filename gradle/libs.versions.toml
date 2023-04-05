@@ -1,7 +1,7 @@
 [versions]
 anroidx-ktx = "1.9.0"
 agp = "7.4.2"
-kotlin = "1.7.21"
+kotlin = "1.8.0"
 appcompat = "1.6.1"
 material = "1.8.0"
 constraintlayout = "2.1.4"
