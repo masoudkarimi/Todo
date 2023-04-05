@@ -4,14 +4,15 @@ import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import mkn.todo.db.dao.TaskDao
 import mkn.todo.db.model.Task
+import mkn.todo.db.model.TaskWithCategory
 
 @Dao
 abstract class RoomTaskDao: TaskDao {
     @Query("SELECT * from tasks")
-    abstract override fun getAllTasks(): Flow<List<Task>>
+    abstract override fun getAllTasks(): Flow<List<TaskWithCategory>>
 
     @Query("SELECT * FROM tasks WHERE id = :id")
-    abstract override fun findTaskById(id: Long): Task?
+    abstract override fun findTaskById(id: Long): TaskWithCategory?
 
     @Insert
     abstract override suspend fun addNewTask(task: Task): Long
