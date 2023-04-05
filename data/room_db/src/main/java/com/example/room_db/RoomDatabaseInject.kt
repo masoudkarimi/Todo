@@ -7,11 +7,13 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import mkn.todo.db.TodoDatabase
+import mkn.todo.db.dao.CategoryDao
+import mkn.todo.db.dao.TaskDao
 import javax.inject.Singleton
 
 @Component(
     dependencies = [RoomDatabaseDependencies::class],
-    modules = [RoomDatabaseModule::class, RoomDatabaseBinds::class]
+    modules = [RoomDatabaseModule::class, DatabaseDaoModule::class, RoomDatabaseBinds::class]
 )
 @Singleton
 interface RoomDatabaseComponent {
@@ -33,6 +35,15 @@ object RoomDatabaseModule {
             .fallbackToDestructiveMigration()
             .build()
     }
+}
+
+@Module
+object DatabaseDaoModule {
+    @Provides
+    fun provideCategoryDao(todoDatabase: TodoDatabase) : CategoryDao = todoDatabase.categoryDao()
+
+    @Provides
+    fun provideTaskDao(todoDatabase: TodoDatabase) : TaskDao = todoDatabase.taskDao()
 }
 
 @Module
