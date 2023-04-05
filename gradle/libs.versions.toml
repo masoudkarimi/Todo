@@ -12,6 +12,10 @@ dagger = "2.45"
 room = "2.5.0"
 coroutine-core = "1.6.1"
 coroutine-android = "1.5.2"
+androidxlifecycle = "2.6.0-alpha05"
+fragmentktx = "1.5.5"
+navigation= "2.4.1"
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -19,6 +23,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+navigation = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "anroidx-ktx" }
@@ -36,5 +41,10 @@ room-compiler = { group = "androidx.room", name="room-compiler", version.ref = "
 room-common = { group = "androidx.room", name="room-common", version.ref = "room" }
 coroutine-core = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-core", version.ref = "coroutine-core" }
 coroutine-android = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-android", version.ref = "coroutine-android" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxlifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidxlifecycle" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentktx" }
+navigation-fragmentktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+navigation-uiktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 
 

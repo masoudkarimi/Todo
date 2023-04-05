@@ -10,7 +10,7 @@ import mkn.todo.tasks.domain.model.Category
 import mkn.todo.tasks.domain.model.Task
 import javax.inject.Inject
 
-class TasksRepositoryImpl @Inject constructor(
+internal class TasksRepositoryImpl @Inject constructor(
     private val taskDao: TaskDao
 ) : TasksRepository {
 
@@ -31,6 +31,6 @@ class TasksRepositoryImpl @Inject constructor(
                     )
                 }
             }
-            .flowOn(Dispatchers.Default)
+            .flowOn(Dispatchers.IO)
     }
 }

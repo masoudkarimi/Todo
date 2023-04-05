@@ -6,7 +6,7 @@ import mkn.todo.tasks.data.repo.TasksRepositoryImpl
 import mkn.todo.tasks.domain.TasksRepository
 
 @Module
-abstract class TasksDataBinds {
+internal abstract class TasksDataBinds {
     @Binds
     abstract fun bindRepository(tasksRepositoryImpl: TasksRepositoryImpl): TasksRepository
 }

@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/feature/tasks" />
             <option value="$PROJECT_DIR$/feature/tasks/data" />
             <option value="$PROJECT_DIR$/feature/tasks/domain" />
+            <option value="$PROJECT_DIR$/feature/tasks/ui" />
           </set>
         </option>
       </GradleProjectSettings>
