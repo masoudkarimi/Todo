@@ -2,7 +2,6 @@ package com.example.room_db.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.room_db.RoomDatabaseComponent
 import com.example.room_db.TodoRoomDatabase
 import dagger.Binds
 import dagger.Module

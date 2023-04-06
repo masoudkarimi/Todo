@@ -1,7 +1,7 @@
 package mkn.todo.di
 
 import android.app.Application
-import com.example.room_db.RoomDatabaseComponent
+import com.example.room_db.di.RoomDatabaseComponent
 import com.example.room_db.di.DatabaseSubcomponentsModule
 import dagger.BindsInstance
 import dagger.Component

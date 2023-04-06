@@ -1,10 +1,5 @@
-package com.example.room_db
+package com.example.room_db.di
 
-import com.example.room_db.di.DatabaseDaoModule
-import com.example.room_db.di.DatabaseScope
-import com.example.room_db.di.RoomDatabaseBinds
-import com.example.room_db.di.RoomDatabaseModule
-import dagger.Component
 import dagger.Subcomponent
 import mkn.todo.db.dao.CategoryDao
 import mkn.todo.db.dao.TaskDao
