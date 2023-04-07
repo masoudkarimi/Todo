@@ -13,16 +13,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
 import mkn.todo.tasks.ui.di.TaskUiComponentFactoryProvider
 import mkn.todo.tasks.ui.di.ViewModelFactory
 import javax.inject.Inject
 
-class TodoListFragment : Fragment() {
-
-    private lateinit var btnNext: MaterialButton
+class TodoSecondFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -47,20 +43,11 @@ class TodoListFragment : Fragment() {
             orientation = LinearLayout.VERTICAL
             layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             val screenName = TextView(context).apply {
-                text = "First Screen"
-            }
-
-            btnNext = MaterialButton(context).apply {
-                text = "Go To Second Fragment"
+                text = "Second Screen"
             }
 
             addView(screenName, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).apply {
                 gravity = Gravity.CENTER_HORIZONTAL
-            })
-
-            addView(btnNext, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).apply {
-                gravity = Gravity.CENTER_HORIZONTAL
-                topMargin = 50
             })
         }
     }
@@ -69,14 +56,8 @@ class TodoListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.uiState.flowWithLifecycle(lifecycle).collect {
-                Log.d("DEBUG_DAGGER","TodoListFragment $it")
+                Log.d("DEBUG_DAGGER", "TodoSecondFragment: $it")
             }
-        }
-
-        btnNext.setOnClickListener {
-            findNavController().navigate(
-                TodoListFragmentDirections.actionFromFirstToSecond()
-            )
         }
     }
 }

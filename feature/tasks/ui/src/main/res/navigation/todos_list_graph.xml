@@ -9,5 +9,13 @@
     <fragment android:id="@+id/todoListFragment"
         android:name="mkn.todo.tasks.ui.TodoListFragment"
         android:label="Nothing"
+        >
+        <action android:id="@+id/action_from_first_to_second"
+            app:destination="@id/todoSecondFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/todoSecondFragment"
+        android:name="mkn.todo.tasks.ui.TodoSecondFragment"
+        android:label="Nothing"
         />
 </navigation>

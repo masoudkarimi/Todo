@@ -40,6 +40,7 @@ dependencies {
     implementation(project(":feature:tasks:domain"))
     implementation(libs.navigation.uiktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.material)
     implementation(libs.androidx.appcompat)
     implementation(libs.dagger)
     implementation(libs.androidx.lifecycle.runtime.ktx)
