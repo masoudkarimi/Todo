@@ -1,17 +1,18 @@
 package mkn.todo.tasks.data.repo
 
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import mkn.todo.base.android.utils.AppCoroutineDispatchers
 import mkn.todo.db.dao.TaskDao
 import mkn.todo.tasks.domain.TasksRepository
 import mkn.todo.tasks.domain.model.Category
 import mkn.todo.tasks.domain.model.Task
 import javax.inject.Inject
 
-internal class TasksRepositoryImpl @Inject constructor(
-    private val taskDao: TaskDao
+class TasksRepositoryImpl @Inject constructor(
+    private val taskDao: TaskDao,
+    private val dispatchers: AppCoroutineDispatchers
 ) : TasksRepository {
 
     override fun getAllTasks(): Flow<List<Task>> {
@@ -31,6 +32,6 @@ internal class TasksRepositoryImpl @Inject constructor(
                     )
                 }
             }
-            .flowOn(Dispatchers.IO)
+            .flowOn(dispatchers.io)
     }
 }

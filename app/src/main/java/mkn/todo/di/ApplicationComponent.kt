@@ -1,19 +1,25 @@
 package mkn.todo.di
 
 import android.app.Application
-import com.example.room_db.di.RoomDatabaseComponent
-import com.example.room_db.di.DatabaseSubcomponentsModule
+import com.example.room_db.di.RoomDatabaseModule
+import com.example.room_db.di.RoomDatabaseBinder
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Singleton
+import mkn.todo.base.android.di.ApplicationScope
+import com.example.room_db.di.DatabaseComponent
+import mkn.todo.tasks.ui.di.TaskListSubcomponentModule
+import mkn.todo.tasks.ui.di.TaskUiComponentFactoryProvider
 
-@Singleton
+@ApplicationScope
 @Component(
-    modules = [AppModule::class, DatabaseSubcomponentsModule::class]
+    modules = [
+        AppModule::class,
+        RoomDatabaseBinder::class,
+        RoomDatabaseModule::class,
+        TaskListSubcomponentModule::class
+    ]
 )
-interface ApplicationComponent {
-
-    fun databaseComponent(): RoomDatabaseComponent.Factory
+abstract class ApplicationComponent : DatabaseComponent, TaskUiComponentFactoryProvider {
 
     @Component.Builder
     interface Builder {

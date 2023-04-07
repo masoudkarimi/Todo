@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation(project(":data:db"))
+    implementation(project(":base:android"))
     implementation(project(":feature:tasks:domain"))
     implementation(libs.dagger)
     implementation(libs.coroutine.core)

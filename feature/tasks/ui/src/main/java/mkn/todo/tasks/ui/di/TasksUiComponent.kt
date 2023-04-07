@@ -1,19 +1,23 @@
 package mkn.todo.tasks.ui.di
 
-import dagger.Component
-import mkn.todo.tasks.data.di.TasksDataComponent
+import dagger.Subcomponent
+import mkn.todo.tasks.data.di.TasksDataBinds
 import mkn.todo.tasks.ui.TodoListFragment
+import mkn.todo.tasks.ui.TodoSecondFragment
 
-@Component(
-    dependencies = [TasksDataComponent::class],
-    modules = [Binder::class]
+@Subcomponent(
+    modules = [Binder::class, TasksDataBinds::class]
 )
 interface TasksUiComponent {
     fun inject(fragment: TodoListFragment)
+    fun inject(fragment: TodoSecondFragment)
 
-
-    @Component.Factory
+    @Subcomponent.Factory
     interface Factory {
-         fun dataDependency(todoDataComponent: TasksDataComponent): TasksUiComponent
+        fun create(): TasksUiComponent
     }
+}
+
+interface TaskUiComponentFactoryProvider {
+    fun providerTaskUiComponentFactory(): TasksUiComponent.Factory
 }

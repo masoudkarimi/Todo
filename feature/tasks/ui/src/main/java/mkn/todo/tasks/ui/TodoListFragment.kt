@@ -1,5 +1,6 @@
 package mkn.todo.tasks.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,8 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import mkn.todo.tasks.data.di.DaggerTasksDataComponent
-import mkn.todo.tasks.ui.di.DaggerTasksUiComponent
+import mkn.todo.tasks.ui.di.TaskUiComponentFactoryProvider
 import mkn.todo.tasks.ui.di.ViewModelFactory
 import javax.inject.Inject
 
@@ -22,9 +22,12 @@ class TodoListFragment : Fragment() {
 
     private val viewModel: TodoListViewModel by viewModels { viewModelFactory }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onAttach(context: Context) {
+        (context.applicationContext as TaskUiComponentFactoryProvider)
+            .providerTaskUiComponentFactory()
+            .create()
+            .inject(this)
+        super.onAttach(context)
     }
 
     override fun onCreateView(

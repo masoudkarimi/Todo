@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":base:android"))
     implementation(project(":data:db"))
     implementation(libs.room.common)
     implementation(libs.room.runtime)
