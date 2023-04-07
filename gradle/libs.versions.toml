@@ -14,7 +14,7 @@ coroutine-core = "1.6.1"
 coroutine-android = "1.5.2"
 androidxlifecycle = "2.6.0-alpha05"
 fragmentktx = "1.5.5"
-navigation= "2.4.1"
+navigation= "2.5.3"
 
 
 [plugins]
@@ -23,7 +23,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-navigation = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+navigation = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "anroidx-ktx" }
