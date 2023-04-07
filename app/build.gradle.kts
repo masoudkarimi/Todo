@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":base:android"))
     implementation(project(":data:db"))
     implementation(project(":data:room_db"))
     implementation(project(":feature:tasks:data"))
