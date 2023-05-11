@@ -1,17 +1,15 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.hilt)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "mkn.todo.tasks.ui"
+    namespace = "mkn.todo.base.ui"
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 22
+        minSdk = 21
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -33,6 +31,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
     }
@@ -49,22 +48,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":base:ui"))
-    implementation(project(":feature:tasks:data"))
-    implementation(project(":feature:tasks:domain"))
-    implementation(libs.hilt)
-    implementation(libs.hilt.navigation.compose)
-
+    implementation(libs.androidx.ktx)
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
-    implementation(libs.compose.navigation)
-    implementation(libs.lifecycle.viewmodel.compose)
-
 
     // Android Studio Preview support
     implementation(libs.compose.ui.tooling.preview)
     debugImplementation(libs.compose.ui.tooling)
-
-    kapt(libs.room.compiler)
-    kapt(libs.hilt.compiler)
 }

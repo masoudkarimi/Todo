@@ -34,9 +34,24 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
 }
 
 dependencies {
+    implementation(project(":base:ui"))
     implementation(project(":base:android"))
     implementation(project(":data:db"))
     implementation(project(":data:room_db"))
@@ -44,16 +59,19 @@ dependencies {
     implementation(project(":feature:tasks:domain"))
     implementation(project(":feature:tasks:ui"))
 
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.compose.navigation)
     implementation(libs.hilt)
-    implementation(libs.room.runtime)
-    implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.constraintlayout)
-    implementation(libs.navigation.uiktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso)
+    implementation(libs.androidx.ktx)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.material3)
+    implementation(libs.compose.activity)
+    implementation(libs.hilt)
+
+    // Android Studio Preview support
+    implementation(libs.compose.ui.tooling.preview)
+    debugImplementation(libs.compose.ui.tooling)
 
     kapt(libs.hilt.compiler)
 }

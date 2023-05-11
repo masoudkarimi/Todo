@@ -7,14 +7,16 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import mkn.todo.tasks.domain.model.Category
+import mkn.todo.tasks.domain.model.Task
 import mkn.todo.tasks.domain.usecase.GetAllTasksUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class TodoListViewModel @Inject constructor(
+internal class TodoListViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     private val getAllTasksUseCase: GetAllTasksUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(TasksListState())
     val uiState = _uiState.asStateFlow()
@@ -35,5 +37,22 @@ class TodoListViewModel @Inject constructor(
                     _uiState.update { it.copy(isLoading = false, tasks = tasks) }
                 }
         }
+    }
+
+    fun addNewTask() {
+        _uiState.update {
+            it.copy(tasks = it.tasks + listOf(
+                Task(
+                    id = it.tasks.size + 1L,
+                    category = Category(
+                        id = 0,
+                        name = "category"
+                    ),
+                    title = "Task",
+                    description = "Task description",
+                )
+            ))
+        }
+
     }
 }
