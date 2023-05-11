@@ -55,9 +55,15 @@ dependencies {
     implementation(project(":base:android"))
     implementation(project(":data:db"))
     implementation(project(":data:room_db"))
+    // Tasks feature
     implementation(project(":feature:tasks:data"))
     implementation(project(":feature:tasks:domain"))
     implementation(project(":feature:tasks:ui"))
+
+    // Profile feature
+    implementation(project(":feature:profile:data"))
+    implementation(project(":feature:profile:domain"))
+    implementation(project(":feature:profile:ui"))
 
     implementation(libs.hilt.navigation.compose)
     implementation(libs.compose.navigation)
