@@ -10,6 +10,7 @@ java {
 }
 
 dependencies {
+    api(project(":data:model"))
     implementation(libs.coroutine.core)
     implementation(libs.java.inject)
 

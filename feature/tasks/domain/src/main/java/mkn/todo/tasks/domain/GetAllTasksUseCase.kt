@@ -1,8 +1,7 @@
-package mkn.todo.tasks.domain.usecase
+package mkn.todo.tasks.domain
 
 import kotlinx.coroutines.flow.Flow
-import mkn.todo.tasks.domain.TasksRepository
-import mkn.todo.tasks.domain.model.Task
+import mkn.todo.data.model.Task
 import javax.inject.Inject
 
 class GetAllTasksUseCase @Inject constructor(

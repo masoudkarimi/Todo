@@ -4,10 +4,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import mkn.todo.base.android.utils.AppCoroutineDispatchers
+import mkn.todo.data.model.Category
+import mkn.todo.data.model.Task
 import mkn.todo.db.dao.TaskDao
 import mkn.todo.tasks.domain.TasksRepository
-import mkn.todo.tasks.domain.model.Category
-import mkn.todo.tasks.domain.model.Task
 import javax.inject.Inject
 
 class TasksRepositoryImpl @Inject constructor(

@@ -1,4 +1,4 @@
-package mkn.todo.tasks.domain.model
+package mkn.todo.data.model
 
 data class Category(
     val id: Int,

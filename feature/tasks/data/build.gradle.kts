@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation(project(":data:db"))
+    implementation(project(":data:model"))
     implementation(project(":base:android"))
     implementation(project(":feature:tasks:domain"))
     implementation(libs.hilt)

@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/base/ui" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/data/db" />
+            <option value="$PROJECT_DIR$/data/model" />
             <option value="$PROJECT_DIR$/data/room_db" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/profile" />

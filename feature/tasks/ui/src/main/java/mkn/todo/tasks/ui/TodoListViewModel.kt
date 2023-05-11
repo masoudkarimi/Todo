@@ -7,9 +7,9 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import mkn.todo.tasks.domain.model.Category
-import mkn.todo.tasks.domain.model.Task
-import mkn.todo.tasks.domain.usecase.GetAllTasksUseCase
+import mkn.todo.data.model.Category
+import mkn.todo.data.model.Task
+import mkn.todo.tasks.domain.GetAllTasksUseCase
 import javax.inject.Inject
 
 @HiltViewModel

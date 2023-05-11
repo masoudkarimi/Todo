@@ -1,6 +1,7 @@
 package mkn.todo.tasks.ui
 
-import mkn.todo.tasks.domain.model.Task
+import mkn.todo.data.model.Task
+
 
 internal data class TasksListState(
     val isLoading: Boolean = false,
