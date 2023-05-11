@@ -11,8 +11,7 @@ java {
 
 dependencies {
     implementation(libs.coroutine.core)
-    implementation(libs.dagger)
+    implementation(libs.java.inject)
 
-    kapt(libs.dagger.compiler)
 
 }

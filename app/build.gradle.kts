@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -43,7 +44,7 @@ dependencies {
     implementation(project(":feature:tasks:domain"))
     implementation(project(":feature:tasks:ui"))
 
-    implementation(libs.dagger)
+    implementation(libs.hilt)
     implementation(libs.room.runtime)
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
@@ -54,5 +55,15 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
 
-    kapt(libs.dagger.compiler)
+    kapt(libs.hilt.compiler)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
+}
+
+// https://github.com/google/dagger/issues/2123
+hilt {
+    enableAggregatingTask = true
 }

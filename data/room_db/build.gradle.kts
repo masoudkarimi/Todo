@@ -39,9 +39,9 @@ dependencies {
     implementation(libs.room.common)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
-    implementation(libs.dagger)
+    implementation(libs.hilt)
 
     kapt(libs.room.compiler)
-    kapt(libs.dagger.compiler)
+    kapt(libs.hilt.compiler)
 
 }

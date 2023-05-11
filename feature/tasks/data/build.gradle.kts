@@ -39,9 +39,9 @@ dependencies {
     implementation(project(":data:db"))
     implementation(project(":base:android"))
     implementation(project(":feature:tasks:domain"))
-    implementation(libs.dagger)
+    implementation(libs.hilt)
     implementation(libs.coroutine.core)
 
     kapt(libs.room.compiler)
-    kapt(libs.dagger.compiler)
+    kapt(libs.hilt.compiler)
 }

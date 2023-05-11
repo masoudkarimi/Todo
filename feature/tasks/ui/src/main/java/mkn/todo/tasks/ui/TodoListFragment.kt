@@ -1,6 +1,5 @@
 package mkn.todo.tasks.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -10,32 +9,20 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import mkn.todo.tasks.ui.di.TaskUiComponentFactoryProvider
-import mkn.todo.tasks.ui.di.ViewModelFactory
-import javax.inject.Inject
 
+@AndroidEntryPoint
 class TodoListFragment : Fragment() {
 
     private lateinit var btnNext: MaterialButton
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
-
-    private val viewModel: TodoListViewModel by viewModels { viewModelFactory }
-
-    override fun onAttach(context: Context) {
-        (context.applicationContext as TaskUiComponentFactoryProvider)
-            .providerTaskUiComponentFactory()
-            .create()
-            .inject(this)
-        super.onAttach(context)
-    }
+    private val viewModel: TodoListViewModel by hiltNavGraphViewModels(R.id.todos_list_graph)
 
     override fun onCreateView(
         inflater: LayoutInflater,
