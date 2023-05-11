@@ -50,7 +50,6 @@ android {
 
 dependencies {
     implementation(project(":base:ui"))
-    implementation(project(":feature:tasks:data"))
     implementation(project(":feature:tasks:domain"))
     implementation(libs.hilt)
     implementation(libs.hilt.navigation.compose)
