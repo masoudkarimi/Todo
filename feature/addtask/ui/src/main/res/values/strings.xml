@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="task_title_example">Ex. Feed the dog</string>
+    <string name="task_description_example">Ex. Don\'t forget to feed the dog</string>
+</resources>
