@@ -20,6 +20,10 @@
             <option value="$PROJECT_DIR$/data/model" />
             <option value="$PROJECT_DIR$/data/room_db" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/addtask" />
+            <option value="$PROJECT_DIR$/feature/addtask/data" />
+            <option value="$PROJECT_DIR$/feature/addtask/domain" />
+            <option value="$PROJECT_DIR$/feature/addtask/ui" />
             <option value="$PROJECT_DIR$/feature/profile" />
             <option value="$PROJECT_DIR$/feature/profile/data" />
             <option value="$PROJECT_DIR$/feature/profile/domain" />
