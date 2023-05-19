@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import mkn.todo.tasks.ui.todoListScreen
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -14,8 +13,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import mkn.todo.addtask.ui.addTaskScreen
+import mkn.todo.addtask.ui.navigateToAddTask
 import mkn.todo.base.ui.TodoTheme
-import mkn.todo.tasks.ui.TodoRoute
+import mkn.todo.profile.ui.navigateToProfile
+import mkn.todo.profile.ui.profileScreen
+import mkn.todo.tasks.ui.TodosRoute
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -43,10 +46,15 @@ private fun AppContent(modifier: Modifier = Modifier) {
     TodoTheme {
         NavHost(
             navController = navController,
-            startDestination = TodoRoute,
+            startDestination = TodosRoute,
             modifier = modifier
         ) {
-            todoListScreen()
+            todoListScreen(
+                addNewTask = navController::navigateToAddTask,
+                profileClick = navController::navigateToProfile
+            )
+            addTaskScreen()
+            profileScreen()
         }
     }
 }
