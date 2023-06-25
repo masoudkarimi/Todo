@@ -1,3 +1,5 @@
+import java.util.Properties
+import java.io.FileInputStream
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
@@ -6,6 +8,8 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt)
 }
+
+val useReleaseKeystore = rootProject.file("keys/app-release.jks").exists()
 
 android {
     namespace = "mkn.todo"
@@ -18,11 +22,36 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        getByName("debug") {
+            storeFile = rootProject.file("keys/app-debug.jks")
+            storePassword = "123456"
+            keyAlias = "todo-debug-alias"
+            keyPassword = "123456"
+        }
+
+        create("release") {
+            if (useReleaseKeystore) {
+                val keystorePropertiesFile = rootProject.file("keystore.properties")
+                val keystoreProperties = Properties()
+                keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+                keyAlias = keystoreProperties["keyAlias"].toString()
+                keyPassword = keystoreProperties["keyPassword"].toString()
+                storeFile = rootProject.file(keystoreProperties["storeFile"].toString())
+                storePassword = keystoreProperties["storePassword"].toString()
+            }
+        }
+    }
+
     buildTypes {
-        debug {
+        getByName("debug") {
+            signingConfig = signingConfigs["debug"]
             isMinifyEnabled = false
         }
-        release {
+
+        getByName("release") {
+            signingConfig = signingConfigs[if (useReleaseKeystore) "release" else "debug"]
+            isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
