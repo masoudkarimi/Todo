@@ -1,3 +1,4 @@
+
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
@@ -8,19 +9,19 @@ plugins {
 
 android {
     namespace = "mkn.todo"
-    compileSdk = 33
+
 
     defaultConfig {
         applicationId = "mkn.todo"
-        minSdk = 22
-        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+        }
         release {
             isMinifyEnabled = true
             proguardFiles(
@@ -29,17 +30,13 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
 
     buildFeatures {
         compose = true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.2"
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
 
     packagingOptions {
@@ -85,14 +82,4 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
 
     kapt(libs.hilt.compiler)
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}
-
-// https://github.com/google/dagger/issues/2123
-hilt {
-    enableAggregatingTask = true
 }
