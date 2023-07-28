@@ -1,6 +1,6 @@
 # Todo
 
-The Todo project is a sample Android application designed to demonstrate how to create a multi-module application that is modularized by **layer and feature**. The application is built using Kotlin, Coroutines, Flow, Hilt, Jetpack Compose, and Room for database.
+The Todo project is a sample Android application designed to demonstrate how to create a multi-module application that is modularized by **layer and feature**. The application is built using Kotlin, Coroutines, Flow, Hilt, Jetpack Compose, and Room for Database.
 
 The purpose of the project is to provide an example of how to create a modularized Android application that can be easily maintained and scaled. Each feature and layer is encapsulated in a separate module, making it easy to add or remove functionality without affecting other parts of the application.
 
@@ -26,4 +26,4 @@ The application is composed of several modules that depend on each other. Here's
 
 ## 🤝Contributing
 
-Most of the features are not completed except the chat feature, so anyone can contribute and improve this project following the [Contributing Guideline](https://github.com/skydoves/chatgpt-android/blob/main/CONTRIBUTING.md).
+Most of the features are not completed yet, so anyone can contribute and improve this project following the [Contributing Guideline](https://github.com/skydoves/chatgpt-android/blob/main/CONTRIBUTING.md).
